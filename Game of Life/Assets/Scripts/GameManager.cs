@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
         tilemap.size = new Vector3Int(tilemapWidth, tilemapHeight, 0);
         tilemap.ResizeBounds();
+        Camera.main.orthographicSize = tilemapHeight * 0.45f;
         Generation.CellState [,] cells = generation.Init(seed, tilemapWidth, tilemapHeight);
         DrawGeneration(cells);
 	}
